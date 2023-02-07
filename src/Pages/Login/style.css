@@ -1,0 +1,71 @@
+.div-login-container {
+    width: 100vw;
+    height: 100vh;
+    background: #f8fafb;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-login-box {
+    width: 25%;
+    height: 60%;
+    background-color: #fff;
+    box-shadow: 14px 11px 34px 4px rgb(138 123 138 / 40%);
+    border-radius: 10px;
+    padding: 3%;
+}
+
+.div-login-box > div > h2 > strong {
+    color: #ff002b;
+}
+
+.div-login-title {
+    margin-bottom: 2.5rem;
+}
+
+.div-login-inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.div-login-inputs > div > input {
+    background: transparent;
+    border: none;
+    padding-bottom: 0;
+    font-size: 20px;
+    border-radius: 0;
+    border-bottom: 1px solid #ff002b;
+
+}
+
+.div-login-inputs > div {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+.div-login-title > h2 {
+    margin-bottom: 5px;
+}
+
+.btn-login {
+    margin-top: 10%;
+    height: 3rem;
+    border: none;
+    border-radius: 30px;
+    background-color: #ff002b;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.btn-login:hover {
+    cursor: pointer;
+    background-color: #e6042a;
+}
+
+.div-login-inputs > span > a, span {
+    color: #000000;
+    margin-top: 5%;
+}
