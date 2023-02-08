@@ -1,9 +1,9 @@
 .div-header-container {
-    background-color: #eee;
+    background-color: #f8fafb;
     margin-top: 0;
     height: 5em;
     display: flex;
-    padding: 1rem;
+    padding: 1em 5em 1em 5em;
     justify-content: space-between;
 }
 
@@ -23,13 +23,20 @@
 
 .btn-header {
     margin-left: 1rem;
-    width: 3rem;
+    width: 3.5rem;
     height: 3rem;
+    background: transparent;
+    border: 1px solid #dcdce6;
+    border-radius: 4px;
+    transition: border-color .5s;
 }
+
+.btn-header:hover {
+    border-color: #ff002b;
+} 
 
 .li-header {
     padding: 1rem;
-    color: #333;
+    color: #ff002b;
     font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
 }
