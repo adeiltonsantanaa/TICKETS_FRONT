@@ -1,6 +1,6 @@
 import React from "react";
+import Footer from "../../Components/Footer";
 import './style.css';
-
 
 export default function Login() {
 
@@ -24,6 +24,7 @@ export default function Login() {
                     <button className="btn-login">Login</button>
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }
