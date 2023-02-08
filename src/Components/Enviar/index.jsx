@@ -1,19 +1,15 @@
-import axios from "axios";
 import React from "react";
 import './style.css';
-import { BASE_URL } from "../../utils/url";
-import {FiSend} from 'react-icons/fi'
+import { FiSend } from 'react-icons/fi';
+import { useNavigate } from "react-router-dom";
 
-//ajustar props
-export default function Enviar({props}) {
+export default function Enviar(props) {
 
-    //configurar essa função de acordo com o endPoint
-    function fechar({props}) {
-        console.log(props)
-        //       axios.post(`${BASE_URL}/id`)
+    const navigate = useNavigate();
+    function enviarInteracao() {
+        navigate('/interacao', {state:{id:props.id}})
     }
 
 
-    return <button onClick={({props}) => fechar}><FiSend/></button>
-
+    return <button className="btn-enviar-icons" onClick={enviarInteracao}><FiSend /></button>
 }
