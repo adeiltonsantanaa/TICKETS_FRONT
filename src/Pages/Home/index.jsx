@@ -6,6 +6,7 @@ import Fechar from "../../Components/Fechar";
 import Enviar from "../../Components/Enviar"
 
 export default function Home() {
+
     return (
         <>
             <Header />
@@ -31,8 +32,8 @@ export default function Home() {
                                 <td>preciso que troquem o toner do setor...</td>
                                 <td>4</td>
                                 <td>Toner</td>
-                                <td><Enviar/></td>
-                                <td><Fechar/></td>
+                                <td><Enviar id={1} /></td>
+                                <td><Fechar id={1} /></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -40,8 +41,8 @@ export default function Home() {
                                 <td>preciso que troquem o toner do setor...</td>
                                 <td>4</td>
                                 <td>Toner</td>
-                                <td><Enviar/></td>
-                                <td><Fechar/></td>
+                                <td><Enviar id={1} /></td>
+                                <td><Fechar id={1} /></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -49,8 +50,8 @@ export default function Home() {
                                 <td>preciso que troquem o toner do setor...</td>
                                 <td>4</td>
                                 <td>Toner</td>
-                                <td><Enviar id={1}/></td>
-                                <td><Fechar/></td>
+                                <td><Enviar id={1} /></td>
+                                <td><Fechar id={1} /></td>
                             </tr>
                         </tbody>
                     </table>
