@@ -1,0 +1,12 @@
+button {
+    border: none;
+    background: none;
+}
+button:hover {
+    cursor: pointer;
+}
+svg {
+    width: 25px;
+    height: 25px;
+    color: #fff;
+}
