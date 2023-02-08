@@ -1,0 +1,46 @@
+.div-interacao-container {
+    background-color: #fff;
+    height: 91.7vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-interacao-interna {
+    background-color: #fff;
+    height: 100%;
+    width: 65%;
+    padding: 2%;
+}
+
+.div-interacao-cabecalho {
+    background-color: #fff;
+    height: 23%;
+    width: 100%;
+    padding: 2%;
+    display: flex;
+}
+
+.div-interacao-assuntos {
+    width: 100%;
+    border-bottom: 1px solid #ff002b;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-interacao {
+    width: 84%;
+    margin: 1px;
+    border: 0.1px solid #ff002b;
+    border-radius: 10px;
+    padding-left: 1%;
+}
+
+.span-interacao {
+    color: #ff002b;
+}
