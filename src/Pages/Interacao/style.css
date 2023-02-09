@@ -25,7 +25,6 @@
 
 .div-interacao-assuntos {
     width: 100%;
-    border-bottom: 1px solid #ff002b;
 }
 
 .row {
@@ -43,4 +42,52 @@
 
 .span-interacao {
     color: #ff002b;
+}
+
+.div-interacao-container textarea {
+    resize: none;
+    padding: 2% !important;
+    width: 80%;
+    border-radius: 10px;
+}
+
+.div-interacao-text {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1%;
+}
+
+.div-interacao-text img {
+    width: 100%;
+}
+
+.btn-interacao-enviar-text {
+    border: 1px solid #ff002b;
+    height: 4em;
+    width: 10em;
+    border-radius: 10px;
+}
+
+.btn-interacao-enviar-text:hover {
+    border: 3px solid #ff002b;
+}
+
+.div-interacao-caixa {
+    display: flex;
+    flex-direction: column;
+}
+
+.div-interacao-circulo {
+    width: 5%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #ff002b;
+}
+
+.div-interacao-circulo>img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
