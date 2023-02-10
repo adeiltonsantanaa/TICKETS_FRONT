@@ -5,7 +5,6 @@
     outline: 0;
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
-    color: var(--light);
 }
 :root {
     --red:#FF002B;
@@ -13,4 +12,17 @@
     --blue: #1E293B;
     --mid: #B8BFC6;
     --light: #ffffff;
+}
+
+body {
+    background-color: var(--blue-dark);
+}
+
+input {
+    background: transparent;
+    border: none;
+    padding-bottom: 0;
+    font-size: 20px;
+    border-radius: 0;
+    border-bottom: 1px solid #ff002b;
 }
