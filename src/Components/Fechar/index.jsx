@@ -7,9 +7,12 @@ import { BASE_URL } from "../../utils/url";
 export default function Fechar(props) {
 
     function fechar() {
-        axios.put(`${BASE_URL}/api/ticket/${props.id}`)
+        const token = localStorage.getItem("accessToken");
+        axios.put(`${BASE_URL}/api/ticket/disable/${props.id}`, null, { headers: { Authorization: 'Bearer ' + token } })
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
+        window.location.reload()
     }
-
 
     return (
         <>
