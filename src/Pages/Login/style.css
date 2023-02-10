@@ -30,7 +30,7 @@
     flex-direction: column;
 }
 
-.div-login-inputs > div > input {
+.div-login-inputs > form > div > input {
     background: transparent;
     border: none;
     padding-bottom: 0;
@@ -40,7 +40,7 @@
 
 }
 
-.div-login-inputs > div {
+.div-login-inputs > form > div {
     display: flex;
     flex-direction: column;
     padding-top: 20px;
@@ -53,6 +53,7 @@
 .btn-login {
     margin-top: 10%;
     height: 3rem;
+    width: 100%;
     border: none;
     border-radius: 30px;
     background-color: #ff002b;
@@ -65,7 +66,7 @@
     background-color: #e6042a;
 }
 
-.div-login-inputs > span > a, span {
+.div-login-inputs > form > span > a, span {
     color: #000000;
     margin-top: 5%;
 }
