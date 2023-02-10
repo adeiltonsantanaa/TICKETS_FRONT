@@ -5,4 +5,12 @@
     outline: 0;
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
+    color: var(--light);
+}
+:root {
+    --red:#FF002B;
+    --blue-dark: #0C121C;
+    --blue: #1E293B;
+    --mid: #B8BFC6;
+    --light: #ffffff;
 }

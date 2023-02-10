@@ -1,5 +1,5 @@
 .div-home-container {
-    background-color: #fff;
+    background-color: var(--blue-dark);
     height: 91.7vh;
     width: 100%;
     display: flex;
@@ -9,7 +9,7 @@
 }
 
 .div-home-interna {
-    background-color: #fff;
+    background-color: var(--blue-dark);
     height: 100%;
     width: 65%;
     padding: 2%;
@@ -24,14 +24,14 @@ table {
 table thead {
     height: 55px;
     font-size: 16px;
-    color: #000000;
+    color: var(--light);
     font-weight: 700;
 }
 
 table tbody {
     font-size: 14px;
     font-weight: 400;
-    color: #000000;
+    color: var(--light);
     text-align: center;
 }
 
