@@ -1,0 +1,76 @@
+.backdrop {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 1;
+}
+
+.modal-ticket {
+    position: absolute;
+    top: 15%;
+    left: 35%;
+    width: 30%;
+    height: 70%;
+    background-color: var(--blue-dark);
+    border-radius: 10px;
+    list-style-type: none;
+    padding: 2%;
+    border: 1px solid gray;
+    z-index: 2;
+    color: var(--light);
+}
+
+.div-modal-btn {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.btn-modal-exit {
+    width: 30px;
+    height: 30px;
+
+}
+
+.btn-modal-exit>svg {
+    color: var(--light);
+    width: 60%;
+    height: 60%;
+}
+
+.div-modal-interna {
+    width: 100%;
+    height: 95%;
+    padding: 15%;
+}
+
+.row-modal-inputs {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+}
+
+#select-modal-problema {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--red);
+    color: var(--light);
+}
+
+#select-modal-problema option {
+    color: var(--blue-dark);
+}
+
+.div-modal-interna label {
+    margin-bottom: 10px;
+}
+
+.btn-modal-submit {
+    border: 1px solid var(--red);
+    width: 100%;
+    height: 3rem;
+    border-radius: 10px;
+    color: var(--light);
+}
