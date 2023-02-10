@@ -6,6 +6,6 @@ footer {
 }
 
 footer > h5 > a, footer > h5 {
-    color: #ff002b;
+    color: var(--red);
     text-decoration: none;
 }

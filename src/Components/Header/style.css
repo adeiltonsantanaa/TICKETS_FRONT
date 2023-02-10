@@ -1,5 +1,5 @@
 .div-header-container {
-    background-color: #f8fafb;
+    background-color: var(--blue);
     margin-top: 0;
     height: 5em;
     display: flex;
@@ -33,10 +33,19 @@
 
 .btn-header:hover {
     border-color: #ff002b;
-} 
+}
 
 .li-header {
     padding: 1rem;
-    color: #ff002b;
+    color: var(--light);
     font-weight: bold;
+}
+
+.li-header:hover {
+    color: #eee6e6;
+}
+
+
+.a-header {
+    text-decoration: none;
 }
