@@ -1,26 +1,36 @@
 .div-interacao-container {
-    background-color: #fff;
+    background-color: var(--blue-dark);
     /* height: 91.7vh; */
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    color: var(--light);
+}
+
+.div-interacao-container button {
+    color: var(--light);
+}
+
+.div-interacao-caixa textarea {
+    color: var(--light);
 }
 
 .div-interacao-interna {
-    background-color: #fff;
+    background-color: var(--blue-dark);
     height: 100%;
     width: 65%;
     padding: 2%;
 }
 
 .div-interacao-cabecalho {
-    background-color: #fff;
+    background-color: var(--blue-dark);
     height: 23%;
     width: 100%;
     padding: 2%;
     display: flex;
+    color: var(--light);
 }
 
 .div-interacao-assuntos {

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import './style.css';
 import { useLocation } from "react-router-dom";
 import Header from "../../Components/Header";
-import Footer from "../../Components/Footer";
 import { FiArrowLeft } from 'react-icons/fi'
 import axios from "axios";
 import { BASE_URL } from "../../utils/url";
@@ -47,29 +46,29 @@ export default function Interacao() {
             <Header />
             <div className="div-interacao-container">
                 <div className="div-interacao-interna">
-                    <h1>Ticket: <span className="span-interacao">123</span></h1>
+                    <h1>Código do Ticket: <span className="span-interacao">{dadosTicket && dadosTicket.codTicket}</span></h1>
+
                     <div className="div-interacao-cabecalho">
-                        {dadosTicket &&
-                            (
-                                <div key={dadosTicket.codTicket} className="div-interacao-assuntos">
-                                    <div className="row">
-                                        <h3>Id:</h3>
-                                        <input value={dadosTicket.codTicket} className="input-interacao" type="text" disabled />
-                                    </div><div className="row">
-                                        <h3>Assunto:</h3>
-                                        <input value={dadosTicket.assunto} className="input-interacao" type="text" disabled />
-                                    </div><div className="row">
-                                        <h3>Funcionário:</h3>
-                                        <input value={dadosTicket.funcionarios.nome} className="input-interacao" type="text" disabled />
-                                    </div><div className="row">
-                                        <h3>Nome do Problema:</h3>
-                                        <input value={dadosTicket.problemas.nome} className="input-interacao" type="text" disabled />
-                                    </div><div className="row">
-                                        <h3>Setor:</h3>
-                                        <input value={dadosTicket.funcionarios.setor.nome} className="input-interacao" type="text" disabled />
-                                    </div>
-                                </div>
-                            )}
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ASSUNTO</th>
+                                    <th>FUNCIONÁRIO</th>
+                                    <th>NOME DO PROBLEMA</th>
+                                    <th>SETOR</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {dadosTicket && (
+                                    <tr key={dadosTicket.codTicket}>
+                                        <td>{dadosTicket.assunto}</td>
+                                        <td>{dadosTicket.funcionarios.nome}</td>
+                                        <td>{dadosTicket.problemas.nome}</td>
+                                        <td>{dadosTicket.funcionarios.setor.nome}</td>
+                                    </tr>
+                                )}
+                            </tbody>
+                        </table>
                     </div>
                     <h2>Enviar Interação:</h2>
                     <div className="div-interacao-text">
@@ -95,7 +94,6 @@ export default function Interacao() {
                     </div>
                 </div>
             </div>
-            <Footer />
         </>
     )
 } 
