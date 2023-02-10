@@ -1,11 +1,13 @@
 footer {
-    position: absolute;
-    bottom: 0;
+    position: relative;
+    top: 3%;
     width: 100%;
     text-align: center;
+    background-color: var(--light);
 }
 
-footer > h5 > a, footer > h5 {
+footer>h5>a,
+footer>h5 {
     color: var(--red);
     text-decoration: none;
 }
