@@ -1,6 +1,6 @@
 import React from "react";
 import './style.css';
-import img from '../../Assets/UNILS - 02.png'
+import img from '../../Assets/UNI-LS-04.png'
 import { FiPower } from 'react-icons/fi'
 import { useNavigate, Link } from "react-router-dom";
 
