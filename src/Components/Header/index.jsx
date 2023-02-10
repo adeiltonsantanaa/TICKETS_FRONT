@@ -1,10 +1,18 @@
 import React from "react";
 import './style.css';
 import img from '../../Assets/UNILS - 02.png'
-import {FiPower} from 'react-icons/fi'
+import { FiPower } from 'react-icons/fi'
+import { useNavigate, Link } from "react-router-dom";
 
 
 export default function Header() {
+
+    const history = useNavigate()
+
+    function sair() {
+        localStorage.clear();
+        history('/')
+    }
 
     return (
         <div className="div-header-container">
@@ -12,11 +20,11 @@ export default function Header() {
 
             <div className="div-header-interna1">
                 <ul className="ul-header">
-                    <a><li className="li-header">teste1</li></a>
-                    <a><li className="li-header">teste2</li></a>
-                    <a><li className="li-header">teste3</li></a>
+                    <Link className="a-header" to="/home"><li className="li-header">Home</li></Link>
+                    <Link className="a-header" to="/home"><li className="li-header">teste1</li></Link>
+                    <Link className="a-header" to="/home"><li className="li-header">teste1</li></Link>
                 </ul>
-                <button className="btn-header"><FiPower/></button>
+                <button onClick={sair} className="btn-header"><FiPower /></button>
             </div>
         </div>
     )
