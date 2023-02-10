@@ -1,6 +1,6 @@
 .div-login-container {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 98.3vh;
     background: #0C121C;
     display: flex;
     flex-direction: row;
@@ -17,7 +17,7 @@
     padding: 3%;
 }
 
-.div-login-box > div > h2 > strong {
+.div-login-box>div>h2>strong {
     color: #ff002b;
 }
 
@@ -30,23 +30,13 @@
     flex-direction: column;
 }
 
-.div-login-inputs > form > div > input {
-    background: transparent;
-    border: none;
-    padding-bottom: 0;
-    font-size: 20px;
-    border-radius: 0;
-    border-bottom: 1px solid #ff002b;
-
-}
-
-.div-login-inputs > form > div {
+.div-login-inputs>form>div {
     display: flex;
     flex-direction: column;
     padding-top: 20px;
 }
 
-.div-login-title > h2 {
+.div-login-title>h2 {
     margin-bottom: 5px;
 }
 
@@ -66,7 +56,8 @@
     background-color: #e6042a;
 }
 
-.div-login-inputs > form > span > a, span {
+.div-login-inputs>form>span>a,
+span {
     color: #000000;
     margin-top: 5%;
 }
