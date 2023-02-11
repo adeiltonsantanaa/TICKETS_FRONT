@@ -5,12 +5,12 @@ import axios from "axios";
 import { BASE_URL } from "../../utils/url";
 import { useNavigate } from "react-router-dom";
 
-export default function ModalTicket({ openClose }) {
+export default function ModalTicket(props) {
 
     const [assunto, setAssunto] = useState();
     const [problema, setProblema] = useState();
     const nav = useNavigate();
-
+    const { openClose, nome } = props;
 
     function salvarTicket() {
         const cod = localStorage.getItem("codFuncionario")
@@ -42,7 +42,7 @@ export default function ModalTicket({ openClose }) {
                     <button className="btn-modal-exit" onClick={() => openClose(true)}><ImExit /></button>
                 </div>
                 <div className="div-modal-interna">
-                    <p>Olá, {localStorage.getItem("funcionario")}.<br /> Digite abaixo informações do Ticket</p>
+                    <p>Olá, {nome}.<br /> Digite abaixo informações do Ticket</p>
                     <div className="row-modal-inputs">
                         <label htmlFor="input-modal-assunto">Assunto:</label>
                         <input id="input-modal-assunto" type="text" onChange={(e) => setAssunto(e.target.value)} />
