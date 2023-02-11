@@ -19,6 +19,10 @@
     color: var(--light);
 }
 
+.div-home-interna h1 span {
+    color: var(--red);
+}
+
 .div-home-interna h1 > strong {
     color: var(--red);
 }
