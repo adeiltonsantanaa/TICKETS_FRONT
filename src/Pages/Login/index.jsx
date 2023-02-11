@@ -23,6 +23,8 @@ export default function Login() {
             localStorage.setItem('name', response.data.username)
             localStorage.setItem('funcionario', response.data.nomeFuncionario)
             localStorage.setItem('codFuncionario', response.data.codFuncionario)
+            localStorage.setItem('role', response.data.roles[0])
+            console.log()
             history('/home')
         } catch (err) {
             alert("Login ou Senha incorreto, tente novamente!");
@@ -35,7 +37,7 @@ export default function Login() {
             <div className="div-login-container">
                 <div className="div-login-box">
                     <div className="div-login-title">
-                        <h2>Sign in to <strong>Tickets Uni LS</strong></h2>
+                        <h2>Login em <strong>Tickets Uni LS</strong></h2>
                         <p>Sistema de realizações de chamados.</p>
                     </div>
                     <div className="div-login-inputs">
