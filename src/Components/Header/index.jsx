@@ -16,8 +16,9 @@ export default function Header() {
 
     return (
         <div className="div-header-container">
-            <img className="img-header-logo" src={img} alt="logo Uni LS" />
-
+            <div className="div-header-logoSaudacao">
+                <Link to={"/home"}><img className="img-header-logo" src={img} alt="logo Uni LS" /></Link>
+            </div>
             <div className="div-header-interna1">
                 <ul className="ul-header">
                     <Link className="a-header" to="/home"><li className="li-header">Home</li></Link>

@@ -8,7 +8,8 @@
 }
 
 .img-header-logo {
-    width: 8%;
+    width: 25%;
+    margin-right: 5%;
 }
 
 .div-header-interna1 {
@@ -56,3 +57,4 @@
 .a-header {
     text-decoration: none;
 }
+
