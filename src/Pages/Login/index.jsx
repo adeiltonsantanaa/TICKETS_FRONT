@@ -24,6 +24,7 @@ export default function Login() {
             localStorage.setItem('funcionario', response.data.nomeFuncionario)
             localStorage.setItem('codFuncionario', response.data.codFuncionario)
             localStorage.setItem('role', response.data.roles[0])
+            localStorage.setItem('expiration', response.data.expiration)
             console.log()
             history('/home')
         } catch (err) {
