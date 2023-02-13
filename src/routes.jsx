@@ -7,7 +7,8 @@ import Login from "./Pages/Login";
 import Home from "./Pages/Home";
 import HomeAdm from "./Pages/HomeAdm";
 import Interacao from "./Pages/Interacao";
-
+import TicketsClosed from "./Pages/TicketsClosed";
+import Erro404 from "./Pages/404";
 
 
 const Private = ({ Component }) => {
@@ -21,8 +22,6 @@ const Role = ({ Adm, Func }) => {
     return <Private Component={Func} />
 }
 
-const Restricted = () => {}
-
 export default function rotas() {
     return (
         <BrowserRouter>
@@ -30,6 +29,8 @@ export default function rotas() {
                 <Route path="/" element={<Login />} />
                 <Route path="/home" element={<Role Adm={HomeAdm} Func={Home} />} />
                 <Route path="/interacao" element={<Private Component={Interacao} />} />
+                <Route path="/home/ticketsFechados" element={<Private Component={TicketsClosed} />} />
+                <Route path="*" element={<Erro404 />} />
             </Routes>
         </BrowserRouter>
     )
