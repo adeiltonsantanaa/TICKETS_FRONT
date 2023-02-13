@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css?family=Share+Tech+Mono|Montserrat:700");
+
+.container-404 {
+    height: 100vh;
+    width: 100%;
+    background-color: red;
+}
+
+.container-404 > h1 {
+    font-size: 45vw;
+    text-align: center;
+    position: fixed;
+    width: 100vw;
+    z-index: 1;
+    color: #ffffff26;
+    text-shadow: 0 0 50px rgba(0, 0, 0, 0.07);
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: "Montserrat", monospace;
+}
