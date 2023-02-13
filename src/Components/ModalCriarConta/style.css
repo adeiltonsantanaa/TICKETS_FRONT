@@ -1,0 +1,76 @@
+.backdrop {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 1;
+}
+
+.modalCriarConta-ticket {
+    position: absolute;
+    top: 15%;
+    left: 35%;
+    width: 30%;
+    height: 70%;
+    background-color: var(--blue-dark);
+    border-radius: 10px;
+    list-style-type: none;
+    padding: 2%;
+    border: 1px solid gray;
+    z-index: 2;
+    color: var(--light);
+}
+
+.div-modalCriarConta-btn {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.btn-modalCriarConta-exit {
+    width: 30px;
+    height: 30px;
+
+}
+
+.btn-modalCriarConta-exit>svg {
+    color: var(--light);
+    width: 60%;
+    height: 60%;
+}
+
+.div-modalCriarConta-interna {
+    width: 100%;
+    height: 95%;
+    padding: 10%;
+}
+
+.row-modalCriarConta-inputs {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+}
+
+#select-modalCriarConta-problema {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--red);
+    color: var(--light);
+}
+
+#select-modalCriarConta-problema option {
+    color: var(--blue-dark);
+}
+
+.div-modalCriarConta-interna label {
+    margin-bottom: 10px;
+}
+
+.btn-modalCriarConta-submit {
+    border: 1px solid var(--red);
+    width: 100%;
+    height: 3rem;
+    border-radius: 10px;
+    color: var(--light);
+}
