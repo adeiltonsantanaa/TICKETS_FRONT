@@ -4,12 +4,30 @@ import './style.css';
 import axios from "axios";
 import { BASE_URL } from "../../utils/url";
 import { useNavigate } from "react-router-dom";
+import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai'
+import ModalCriarConta from "../../Components/ModalCriarConta";
 
 export default function Login() {
 
+    const [open, setOpen] = useState(false);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [eye, setEye] = useState(false);
     const history = useNavigate();
+
+    function openClose(data) {
+        setOpen(!open)
+    }
+
+    function passwordView() {
+        let value = document.getElementById('usr-login-pwd');
+        if (value.type === "password") {
+            setEye(!eye)
+            return value.type = 'text'
+        }
+        setEye(!eye)
+        return value.type = 'password'
+    }
 
     async function login(e) {
         e.preventDefault();
@@ -25,7 +43,6 @@ export default function Login() {
             localStorage.setItem('codFuncionario', response.data.codFuncionario)
             localStorage.setItem('role', response.data.roles[0])
             localStorage.setItem('expiration', response.data.expiration)
-            console.log()
             history('/home')
         } catch (err) {
             alert("Login ou Senha incorreto, tente novamente!");
@@ -35,6 +52,9 @@ export default function Login() {
 
     return (
         <>
+            {open && (
+                <ModalCriarConta openClose={openClose}/>
+            )}
             <div className="div-login-container">
                 <div className="div-login-box">
                     <div className="div-login-title">
@@ -42,18 +62,19 @@ export default function Login() {
                         <p>Sistema de realizações de chamados.</p>
                     </div>
                     <div className="div-login-inputs">
-                        <form onSubmit={login}>
+                        <form  onSubmit={login}>
                             <div>
                                 <label htmlFor="usr-login-input">Username</label>
-                                <input id="usr-login-input" type="text" onChange={e => setUsername(e.target.value)} />
+                                <input id="usr-login-input" required type="text" onChange={e => setUsername(e.target.value)} />
                             </div>
                             <div>
                                 <label htmlFor="usr-login-pwd">Password</label>
-                                <input id="usr-login-pwd" type="password" onChange={e => setPassword(e.target.value)} />
+                                <input id="usr-login-pwd" type="password" required onChange={e => setPassword(e.target.value)} />
+                                <button className="btn-login-eye" type="button" onClick={passwordView}>{eye ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}</button>
                             </div>
-                            <span><a href="mailto:tecnologia@unils.edu.br?subject=Problemas para fazer login no tickets">problemas com o Login</a></span>
                             <button className="btn-login" type="submit">Login</button>
                         </form>
+                        <button onClick={openClose}>criar conta</button>
                     </div>
                     <Footer />
                 </div>
