@@ -23,6 +23,7 @@ export default function Header() {
                 <ul className="ul-header">
                     <Link className="a-header" to="/home"><li className="li-header">Home</li></Link>
                     <Link className="a-header" to="/home/ticketsFechados"><li className="li-header">Tickets Fechados</li></Link>
+                    <Link className="a-header" to="/informacoes"><li className="li-header">Informações</li></Link>
                 </ul>
                 <button onClick={sair} className="btn-header"><FiPower /></button>
             </div>
