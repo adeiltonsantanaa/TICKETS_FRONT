@@ -8,12 +8,7 @@ export default function Informacoes() {
 
     const [file, setFile] = useState(null);
     const [previewUrl, setPreviewUrl] = useState(null);
-    const [open, setOpen] = useState(false);
-
-    function openClose(data) {
-        setOpen(!open)
-    }
-
+    const [openPreview, setOpenPreview] = useState(false);
 
     const handleFileChange = (event) => {
         const file = event.target.files[0];
@@ -54,10 +49,10 @@ export default function Informacoes() {
                             <h2>Obs: O arquivo precisa ser jpeg e conter menos de 10Kb</h2>
                         </div>
                         <div className="div-informacoes-campos">
-                            {open && <img src={previewUrl} alt="Preview" />}
+                            {openPreview && <img src={previewUrl} alt="Preview" />}
                             <form className="form-informacoes" onSubmit={handleSubmit}>
-                                <input onChange={handleFileChange} type="file" id="input-informacoes" />
-                                <button className="btn-informacoes-ver" onClick={openClose} type="button">Ver Imagem</button>
+                                <input type="file" id="input-informacoes" onChange={handleFileChange} />
+                                <button className="btn-informacoes-ver" type="button" onClick={() => setOpenPreview(!openPreview)}>Ver Imagem</button>
                                 <button className="btn-informacoes-submit" type="submit">Salvar Imagem</button>
                             </form>
                         </div>
@@ -67,6 +62,3 @@ export default function Informacoes() {
         </>
     )
 }
-{/* <div className="div-informacoes-pre">
-<img src={previewUrl} alt="Preview" />
-</div> */}
