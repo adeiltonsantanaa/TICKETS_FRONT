@@ -42,9 +42,9 @@
     align-items: center;
 }
 
-.div-informacoes-pre img {
-    max-height: 800px;
+.div-informacoes-campos img {
     max-width: 800px;
+    max-height: 500px;
 }
 
 .div-informacoes-box {
@@ -57,7 +57,8 @@
     align-items: center;
 }
 
-.btn-informacoes-submit, .btn-informacoes-ver {
+.btn-informacoes-submit,
+.btn-informacoes-ver {
     border: 1px solid var(--red);
     color: var(--light);
     border-radius: 10px;
