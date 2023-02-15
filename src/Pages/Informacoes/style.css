@@ -1,0 +1,77 @@
+.div-informacoes-container {
+    background-color: var(--blue-dark);
+    /* height: 90vh; */
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-informacoes-interna {
+    background-color: var(--blue-dark);
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.div-informacoes-descricao {
+    color: var(--light);
+}
+
+.div-informacoes-descricao span {
+    color: var(--red);
+}
+
+.div-informacoes-campos {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--light);
+}
+
+.div-informacoes-pre {
+    max-height: 800px;
+    max-width: 800px;
+    display: flex;
+    margin-top: 2%;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-informacoes-pre img {
+    max-height: 800px;
+    max-width: 800px;
+}
+
+.div-informacoes-box {
+    width: 70%;
+}
+
+.form-informacoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-informacoes-submit, .btn-informacoes-ver {
+    border: 1px solid var(--red);
+    color: var(--light);
+    border-radius: 10px;
+    width: 100%;
+    height: 3rem;
+    font-weight: bolder;
+    font-size: medium;
+}
+
+.btn-informacoes-ver {
+    width: 50%;
+    margin-bottom: 2%;
+}
+
+#input-informacoes {
+    margin: 5%;
+}
