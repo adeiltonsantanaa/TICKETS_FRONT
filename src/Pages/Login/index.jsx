@@ -6,6 +6,9 @@ import { BASE_URL } from "../../utils/url";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai'
 import ModalCriarConta from "../../Components/ModalCriarConta";
+import { ToastContainer, toast } from 'react-toastify'
+import "react-toastify/dist/ReactToastify.css";
+
 
 export default function Login() {
     const [openModal, setOpenModal] = useState(false);
@@ -13,6 +16,7 @@ export default function Login() {
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const history = useNavigate();
+
 
     async function handleLogin(e) {
         e.preventDefault();
@@ -26,7 +30,7 @@ export default function Login() {
             localStorage.setItem('expiration', response.data.expiration);
             history('/home');
         } catch (err) {
-            alert("Login ou Senha incorreto, tente novamente!");
+            toast.warning("Login ou Senha incorretos!")
         }
     };
 
@@ -40,6 +44,7 @@ export default function Login() {
 
     return (
         <>
+            <ToastContainer />
             {openModal && <ModalCriarConta openClose={handleModal} />}
             <div className="div-login-container">
                 <div className="div-login-box">
@@ -70,3 +75,4 @@ export default function Login() {
         </>
     )
 }
+

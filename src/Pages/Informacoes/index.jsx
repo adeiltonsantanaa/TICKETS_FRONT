@@ -3,6 +3,8 @@ import './style.css';
 import Header from '../../Components/Header'
 import { BASE_URL } from "../../utils/url";
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify'
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Informacoes() {
 
@@ -33,13 +35,16 @@ export default function Informacoes() {
 
             const token = localStorage.getItem('accessToken')
             axios.post(`${BASE_URL}/api/imagem/salvarImagem`, formData, { headers: { Authorization: 'Bearer ' + token } })
-                .then(res => console.log(res.data))
-                .catch(error => console.log(error));
+                .then(res => toast.success(res.data))
+                .catch(error => toast.error(error.response.data));
+               
         }
+
     };
 
     return (
         <>
+            <ToastContainer/>
             <Header />
             <div className="div-informacoes-container">
                 <div className="div-informacoes-interna">
