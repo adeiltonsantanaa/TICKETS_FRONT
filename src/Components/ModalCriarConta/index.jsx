@@ -3,7 +3,7 @@ import './style.css';
 import { ImExit } from 'react-icons/im'
 import axios from "axios";
 import { BASE_URL } from "../../utils/url";
-import { useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify'
 
 export default function ModalCriarConta(props) {
 
@@ -11,9 +11,8 @@ export default function ModalCriarConta(props) {
     const [fullName, setFullName] = useState();
     const [password, setPassword] = useState();
     const [email, setEmail] = useState();
-    const nav = useNavigate();
 
-    const { openClose, nome } = props;
+    const { openClose } = props;
 
     function salvarTicket() {
         const dados = {
@@ -23,12 +22,11 @@ export default function ModalCriarConta(props) {
             email: email,
         }
 
-        try {
-            axios.post(`${BASE_URL}/auth/createUser`, dados)
-                .then(res => alert("Usuário " + res.data.username + " criado!"))
-        } catch (error) {
-            console.log(error)
-        }
+
+        axios.post(`${BASE_URL}/auth/createUser`, dados)
+            .then(res => toast.success("Usuário " + res.data.username + " criado!"))
+            .catch(err => toast.error(err.response.data.message))
+
 
     }
 
@@ -56,7 +54,7 @@ export default function ModalCriarConta(props) {
                         <label htmlFor="input-modalCriarConta-mail">E-mail:</label>
                         <input id="input-modalCriarConta-mail" type="text" onChange={(e) => setEmail(e.target.value)} />
                     </div>
-                    
+
                     <div className="row-modalCriarConta-inputs">
                         <button onClick={salvarTicket} className="btn-modalCriarConta-submit">
                             Enviar
