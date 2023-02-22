@@ -35,7 +35,7 @@ export default function HomeAdm() {
         const request = verificaRole()
         const token = localStorage.getItem('accessToken');
         axios.get(`${BASE_URL}${request}`, { headers: { Authorization: 'Bearer ' + token } })
-            .then(res => { console.log(res.data); setTickets(res.data); setTickets(res.data) })
+            .then(res => { setTickets(res.data); setTickets(res.data) })
             .catch(err => { console.log(err) })
     }, []);
 

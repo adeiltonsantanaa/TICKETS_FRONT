@@ -18,7 +18,7 @@ export default function Interacao() {
     useEffect(() => {
         const token = localStorage.getItem('accessToken');
         axios.get(`${BASE_URL}/api/ticket/buscar/${location.state.id}`, { headers: { Authorization: 'Bearer ' + token } })
-            .then(res => { console.log(res.data); setDadosTicket(res.data); SetTicket(res.data.mensagens) })
+            .then(res => { setDadosTicket(res.data); SetTicket(res.data.mensagens) })
             .catch(err => { console.log(err) })
     }, [location.state.id]);
 
