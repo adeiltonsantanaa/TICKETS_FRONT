@@ -30,11 +30,15 @@ export default function TicketsClosed() {
         return `/api/ticket/todos/disable/${user}`
     }
 
+    function retiraTicketDaLista(id) {
+        setTickets(prevTickets => prevTickets.filter(ticket => ticket.codTicket !== id))
+    }
+
     useEffect(() => {
         const request = verificaRole()
         const token = localStorage.getItem('accessToken');
         axios.get(`${BASE_URL}${request}`, { headers: { Authorization: 'Bearer ' + token } })
-            .then(res => { console.log(res.data); setTickets(res.data); setTickets(res.data) })
+            .then(res => { setTickets(res.data); setTickets(res.data) })
             .catch(err => { console.log(err) })
     }, []);
 
@@ -68,7 +72,7 @@ export default function TicketsClosed() {
                                     <td>{t.funcionarios.nome}</td>
                                     <td>{t.problemas.codProblema}</td>
                                     <td>{t.problemas.nome}</td>
-                                    <td><VoltarExec id={t.codTicket} /></td>
+                                    <td><VoltarExec id={t.codTicket} func={() => retiraTicketDaLista(t.codTicket)} /></td>
                                 </tr>
                             ))}
                         </tbody>
