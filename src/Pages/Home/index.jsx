@@ -20,6 +20,10 @@ export default function Home() {
         setOpen((prevState) => !prevState);
     }
 
+    function retiraTicketDaLista(id) {
+        setTickets(prevTickets => prevTickets.filter(ticket => ticket.codTicket !== id))
+    }
+
     useEffect(() => {
         const role = localStorage.getItem("role");
         const userId = localStorage.getItem("codFuncionario");
@@ -67,9 +71,7 @@ export default function Home() {
                                     <td>
                                         <Enviar id={ticket.codTicket} />
                                     </td>
-                                    <td>
-                                        <Fechar id={ticket.codTicket} />
-                                    </td>
+                                    <td><Fechar id={ticket.codTicket} func={() => retiraTicketDaLista(ticket.codTicket)} /></td>
                                 </tr>
                             ))}
                         </tbody>

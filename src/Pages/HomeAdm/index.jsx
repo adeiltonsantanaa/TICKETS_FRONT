@@ -31,6 +31,10 @@ export default function HomeAdm() {
         return `/api/ticket/todos/ativos/${user}`
     }
 
+    function retiraTicketDaLista(id) {
+        setTickets(prevTickets => prevTickets.filter(ticket => ticket.codTicket !== id))
+    }
+
     useEffect(() => {
         const request = verificaRole()
         const token = localStorage.getItem('accessToken');
@@ -48,8 +52,9 @@ export default function HomeAdm() {
             <div className="div-home-container">
                 <div className="div-home-interna">
                     <div className="div-home-add">
-                        <h1>Visão Administrador: <br/>Olá, <span>{nomeUsuario}</span>. Existem <strong>{tickets.length}</strong> tickets Abertos no sistema.</h1>
+                        <h1>Visão Administrador: <br />Olá, <span>{nomeUsuario}</span>. Existem <strong>{tickets.length}</strong> tickets Abertos no sistema.</h1>
                         <button onClick={openClose} >Add Ticket</button>
+                        <button onClick={() => retiraTicketDaLista(1)}>retirar ticket</button>
                     </div>
                     <table>
                         <thead>
@@ -75,7 +80,7 @@ export default function HomeAdm() {
                                     <td>{t.problemas.codProblema}</td>
                                     <td>{t.problemas.nome}</td>
                                     <td><Enviar id={t.codTicket} /></td>
-                                    <td><Fechar id={t.codTicket} /></td>
+                                    <td><Fechar id={t.codTicket} func={() => retiraTicketDaLista(t.codTicket)} /></td>
                                 </tr>
                             ))}
                         </tbody>
