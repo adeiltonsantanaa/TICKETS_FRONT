@@ -5,13 +5,13 @@ import axios from "axios";
 import { BASE_URL } from "../../utils/url";
 
 export default function Fechar(props) {
+    const { id, func } = props;
 
     function fechar() {
         const token = localStorage.getItem("accessToken");
-        axios.put(`${BASE_URL}/api/ticket/disable/${props.id}`, null, { headers: { Authorization: 'Bearer ' + token } })
-            .then(res => console.log(res))
+        axios.put(`${BASE_URL}/api/ticket/disable/${id}`, null, { headers: { Authorization: 'Bearer ' + token } })
+            .then(func())
             .catch(err => console.log(err))
-        window.location.reload()
     }
 
     return (
