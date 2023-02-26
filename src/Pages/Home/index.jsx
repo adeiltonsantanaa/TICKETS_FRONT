@@ -17,7 +17,7 @@ export default function Home() {
     }
 
     function handleOpenClose() {
-        setOpen((prevState) => !prevState);
+        setOpen(!open);
     }
 
     function retiraTicketDaLista(id) {
