@@ -60,7 +60,7 @@ export default function Interacao() {
                             </thead>
                             <tbody>
                                 {dadosTicket && (
-                                    <tr key={dadosTicket.codTicket}>
+                                    <tr>
                                         <td>{dadosTicket.assunto}</td>
                                         <td>{dadosTicket.funcionarios.nome}</td>
                                         <td>{dadosTicket.problemas.nome}</td>
