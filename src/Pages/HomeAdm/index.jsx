@@ -54,7 +54,6 @@ export default function HomeAdm() {
                     <div className="div-home-add">
                         <h1>Visão Administrador: <br />Olá, <span>{nomeUsuario}</span>. Existem <strong>{tickets.length}</strong> tickets Abertos no sistema.</h1>
                         <button onClick={openClose} >Add Ticket</button>
-                        <button onClick={() => retiraTicketDaLista(1)}>retirar ticket</button>
                     </div>
                     <table>
                         <thead>
