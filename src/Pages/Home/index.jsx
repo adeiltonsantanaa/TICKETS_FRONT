@@ -8,7 +8,7 @@ import { BASE_URL } from "../../utils/url";
 import axios from "axios";
 import { rolesOfDecodedToken } from "../../utils/jwtDecoder";
 
-export default function HomeAdm() {
+export default function Home() {
 
     const [open, setOpen] = useState(false);
     const [tickets, setTickets] = useState([]);
