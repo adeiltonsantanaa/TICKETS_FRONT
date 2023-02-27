@@ -12,8 +12,10 @@ export default function Home() {
 
     const [open, setOpen] = useState(false);
     const [tickets, setTickets] = useState([]);
+    const [ticketCheckboxes, setTicketCheckboxes] = useState({});
     const nomeUsuario = ajustaNomeUsuario();
     const role = rolesOfDecodedToken()
+    const request = verificaRole()
 
     function ajustaNomeUsuario() {
         var nomeMinusculo = localStorage.getItem('funcionario').toLowerCase()
@@ -42,12 +44,11 @@ export default function Home() {
     }
 
     useEffect(() => {
-        const request = verificaRole()
         const token = localStorage.getItem('accessToken');
         axios.get(`${BASE_URL}${request}`, { headers: { Authorization: 'Bearer ' + token } })
             .then(res => { setTickets(res.data); setTickets(res.data) })
             .catch(err => { console.log(err) })
-    }, []);
+    }, [request]);
 
     return (
         <>
@@ -64,6 +65,7 @@ export default function Home() {
                     <table>
                         <thead>
                             <tr>
+                                <th>SELECIONAR</th>
                                 <th>ID</th>
                                 <th>ASSUNTO</th>
                                 <th>FUNCIONÁRIO</th>
@@ -76,6 +78,19 @@ export default function Home() {
                         <tbody>
                             {tickets.map(t => (
                                 <tr key={t.codTicket}>
+                                    <td>
+                                        <input
+                                            type="checkbox"
+                                            checked={ticketCheckboxes[t.codTicket]}
+                                            onChange={(e) => {
+                                                setTicketCheckboxes({
+                                                    ...ticketCheckboxes,
+                                                    [t.codTicket]: e.target.checked,
+                                                });
+                                            }}
+                                        />
+
+                                    </td>
                                     <td>{t.codTicket}</td>
                                     <td>{t.assunto}</td>
                                     <td>{t.funcionarios.nome}</td>
