@@ -6,12 +6,14 @@ import Enviar from "../../Components/Enviar"
 import ModalTicket from "../../Components/ModalTicket";
 import { BASE_URL } from "../../utils/url";
 import axios from "axios";
+import { rolesOfDecodedToken } from "../../utils/jwtDecoder";
 
 export default function HomeAdm() {
 
     const [open, setOpen] = useState(false);
     const [tickets, setTickets] = useState([]);
     const nomeUsuario = ajustaNomeUsuario();
+    const role = rolesOfDecodedToken()
 
     function ajustaNomeUsuario() {
         var nomeMinusculo = localStorage.getItem('funcionario').toLowerCase()
@@ -23,12 +25,16 @@ export default function HomeAdm() {
     }
 
     function verificaRole() {
-        const role = localStorage.getItem('role')
         const user = localStorage.getItem('codFuncionario');
-        if (role === "ADM") {
-            return "/api/ticket/todos/ativos"
-        }
-        return `/api/ticket/todos/ativos/${user}`
+        return role === "ADM" ? "/api/ticket/todos/ativos" : `/api/ticket/todos/ativos/${user}`;
+    }
+
+    function visao() {
+        return role === "ADM" ? "Administrador" : "Funcionário(a)"
+    }
+
+    function descricaoTicketsAbertos() {
+        return tickets.length === 1 ? "ticket aberto" : "tickets abertos"
     }
 
     function retiraTicketDaLista(id) {
@@ -52,7 +58,7 @@ export default function HomeAdm() {
             <div className="div-home-container">
                 <div className="div-home-interna">
                     <div className="div-home-add">
-                        <h1>Visão Administrador: <br />Olá, <span>{nomeUsuario}</span>. Existem <strong>{tickets.length}</strong> tickets Abertos no sistema.</h1>
+                        <h1>Visão: {visao()} <br />Olá, <span>{nomeUsuario}</span>. Atualmente temos <strong>{tickets.length}</strong> {descricaoTicketsAbertos()} no sistema.</h1>
                         <button onClick={openClose} >Add Ticket</button>
                     </div>
                     <table>
