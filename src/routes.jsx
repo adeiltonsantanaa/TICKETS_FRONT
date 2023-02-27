@@ -4,7 +4,7 @@ import { isAuthenticated } from "./utils/auth";
 
 
 import Login from "./Pages/Login";
-import HomeAdm from "./Pages/HomeAdm";
+import Home from "./Pages/Home";
 import Interacao from "./Pages/Interacao";
 import TicketsClosed from "./Pages/TicketsClosed";
 import Erro404 from "./Pages/404";
@@ -20,7 +20,7 @@ export default function rotas() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Login />} />
-                <Route path="/home" element={<Private Component={HomeAdm} />} />
+                <Route path="/home" element={<Private Component={Home} />} />
                 <Route path="/interacao" element={<Private Component={Interacao} />} />
                 <Route path="/home/ticketsFechados" element={<Private Component={TicketsClosed} />} />
                 <Route path="/informacoes" element={<Private Component={Informacoes} />} />
